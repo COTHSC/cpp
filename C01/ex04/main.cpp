@@ -6,7 +6,7 @@
 /*   By: jescully <jescully@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 22:54:44 by jescully          #+#    #+#             */
-/*   Updated: 2022/01/23 23:26:12 by jescully         ###   ########.fr       */
+/*   Updated: 2022/01/24 12:04:37 by jescully         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int main(int argc, char **argv)
     std::string     thatyMyLine;
     std::string     ogString;
     std::string     newString;
+	int				pos;
 
     if (argc != 4)
     {
@@ -45,10 +46,13 @@ int main(int argc, char **argv)
     }
     while(getline(infile, thatyMyLine))
     {
-        if(thatyMyLine.find("test") != std::string::npos)
+        while((pos = thatyMyLine.find("test")) != std::string::npos)
         {
-            std::cout << "thats where the swap would happen" << std::endl;
+            outfile << thatyMyLine.substr(0, pos);// << std::endl;
+			thatyMyLine = thatyMyLine.substr(pos + ogString.size(), std::string::npos);// + thatyMyLine(pos + 4, std::string::npos);
+			outfile << newString; //<< std::endl;
         }
+		outfile << thatyMyLine << std::endl;
     }
     outfile.close();
     infile.close();
