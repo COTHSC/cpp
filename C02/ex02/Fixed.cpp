@@ -6,7 +6,7 @@
 /*   By: jescully <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 15:14:44 by jescully          #+#    #+#             */
-/*   Updated: 2022/01/31 10:48:37 by jescully         ###   ########.fr       */
+/*   Updated: 2022/02/01 17:03:00 by jescully         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,20 @@
 
 Fixed::Fixed() : _fixedPointValue(0)
 {
-	std::cout << "Fixed - Default constructor called\n";
+	/* std::cout << "Fixed - Default constructor called\n"; */
 	return;
 }
 
 Fixed::Fixed(const Fixed & src)
 {
-	std::cout << "Fixed - Copy constructor called\n";
+	/* std::cout << "Fixed - Copy constructor called\n"; */
 	*this = src;
 	return;
 }
 
 Fixed::Fixed(const int value)
 {
-	std::cout << "Fixed - Int constructor called\n";
-    setBits((int)(value * (1 << _getFractionalBits())));
+    setBits(value << _getFractionalBits());
 	return;
 }
 
@@ -64,38 +63,125 @@ int Fixed::toInt(void) const
 }
 Fixed::~Fixed()
 {
-	std::cout << "Fixed - Destructor called\n";
 	return;
 }
 
 int	Fixed::getBits( void ) const
 {
-	/* std::cout << "Fixed - getRawBits member function called\n"; */
 	return _fixedPointValue;
 }
 
 Fixed&  Fixed::operator=(const Fixed& rhs)
 {
-	std::cout << "Fixed - Assignation operator called\n";
     this->_fixedPointValue = rhs.getBits();
+	return *this;
+}
+
+bool  Fixed::operator<(const Fixed & rhs) const
+{
+	if (this->getBits() < rhs.getBits())
+		return true;
+	return false;
+}
+
+bool  Fixed::operator<=(const Fixed & rhs) const
+{
+	if (this->getBits() <= rhs.getBits())
+		return true;
+	return false;
+}
+
+bool  Fixed::operator>(const Fixed & rhs) const
+{
+	if (this->getBits() < rhs.getBits())
+		return false;
+	return true;
+}
+
+bool  Fixed::operator>=(const Fixed & rhs) const
+{
+	if (this->getBits() <= rhs.getBits())
+		return false;
+	return true;
+}
+
+bool  Fixed::operator==(const Fixed & rhs) const
+{
+	if (this->getBits() == rhs.getBits())
+		return true;
+	return false;
+}
+
+bool  Fixed::operator!=(const Fixed & rhs) const
+{
+	if (this->getBits() != rhs.getBits())
+		return true;
+	return false;
+}
+
+Fixed Fixed::operator--(void)
+{
+	Fixed tmp;
+	tmp.setBits(this->getBits() - (1 << this->_getFractionalBits()));
+	return tmp;
+}
+
+Fixed Fixed::operator--(int)
+{
+	this->setBits(this->getBits() - (1 << this->_getFractionalBits()));
 	return *this;
 }
 
 bool    Fixed::isInt( void ) const
 {
-    int i = -1;
-    
-    while( ++i < _getFractionalBits())
-    {
-        if (((getBits() & (1 << i)) >> i) == 1)
-            return false;
-    }
-    return true;
+	int i = -1;
+
+	while( ++i < _getFractionalBits())
+	{
+		if (((getBits() & (1 << i)) >> i) == 1)
+			return false;
+	}
+	return true;
 }
 
 void	Fixed::setBits(int const raw)
 {
 	_fixedPointValue = raw;
+}
+
+Fixed Fixed::operator+(Fixed const & rhs) const
+{
+	Fixed ret;
+
+	ret.setBits(this->getBits() + rhs.getBits());
+	return ret;
+}
+
+Fixed Fixed::operator-(Fixed const & rhs) const
+{
+	Fixed ret;
+
+	ret.setBits(this->getBits() - rhs.getBits());
+	return ret;
+}
+
+Fixed Fixed::operator*(Fixed const & rhs) const
+{
+	long long int tmp = (long long int)this->getBits() * (long long int)rhs.getBits();
+	Fixed ret;
+	tmp = tmp >> _getFractionalBits();
+	ret.setBits((int)tmp);
+	return ret;
+}
+
+Fixed Fixed::operator/(Fixed const & rhs) const
+{
+	long long int tmp;
+	Fixed ret;
+	
+	tmp = (this->getBits() << _getFractionalBits()) / rhs.getBits();
+	ret.setBits((tmp));
+	return ret;
 }
 
 std::ostream & operator<<( std::ostream & o, Fixed const & rhs )

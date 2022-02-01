@@ -6,7 +6,7 @@
 /*   By: jescully <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 15:10:39 by jescully          #+#    #+#             */
-/*   Updated: 2022/01/31 11:00:36 by jescully         ###   ########.fr       */
+/*   Updated: 2022/02/01 16:56:30 by jescully         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,13 @@ class Fixed
 
 
         //Hello operator (calculus)
-        Fixed operator+(const Fixed & rhs) const;
+        Fixed operator+( Fixed const & rhs) const;
         Fixed operator*(const Fixed & rhs) const;
         Fixed operator-(const Fixed & rhs) const;
         Fixed operator/(const Fixed & rhs) const;
+
+        Fixed operator--(void);
+        Fixed operator--(int);
 
         //Hello operator (assignation)
 		Fixed &  operator=(const Fixed & rhs);
