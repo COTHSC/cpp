@@ -6,7 +6,7 @@
 /*   By: jescully <jescully@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 17:17:03 by jescully          #+#    #+#             */
-/*   Updated: 2022/01/23 17:30:47 by jescully         ###   ########.fr       */
+/*   Updated: 2022/02/14 17:45:35 by jescully         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class   Weapon
     public:
         Weapon(std::string type);
         ~Weapon();
-        std::string const getType(void) const;
+        std::string const &getType(void) const;
         void    setType(std::string type);
 };
 

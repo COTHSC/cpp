@@ -6,7 +6,7 @@
 /*   By: jescully <jescully@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 09:02:17 by jescully          #+#    #+#             */
-/*   Updated: 2022/01/21 09:26:43 by jescully         ###   ########.fr       */
+/*   Updated: 2022/02/14 10:50:22 by jescully         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void    Contact::fillContact(int index)
     std::getline(std::cin, _surName);
     std::cout << std::setw(17)  << " Nickname  ";
     std::getline(std::cin, _nickName);
-    std::cout << std::setw(17)  << " Phone Number ";
+    std::cout << std::setw(17)  << " Phone Number  ";
     std::getline(std::cin, _phoneNumber);
     std::cout << std::setw(17)  << " Darkest Secret  ";
     std::getline(std::cin, _darkestSecret);
@@ -49,18 +49,27 @@ void    Contact::fillContact(int index)
 static void printTenChar(std::string str)
 {
     int         len;
-    std::string spaces(10, '0');
+    std::string spaces(10, ' ');
 
     len = str.length();
     if (len <= 10)
         std::cout << spaces.substr(0, 10 - len) << str;
     else
-        std::cout << spaces.substr(0, 9) << '.';
+        std::cout << str.substr(0, 9) << '.';
 }
 
 void    Contact::showContact(void) const
 {
-    printTenChar(std::to_string(_index));
+	int len = 1;
+	int temp = _index;
+    std::string spaces(10, ' ');
+
+	while (temp / 10 > 0)
+		len++;
+    if (len <= 10)
+        std::cout << spaces.substr(0, 10 - len) << _index;
+    else
+        std::cout << spaces.substr(0, 9) << _index;
     std::cout << "|";
     printTenChar(_firstName);
     std::cout << "|";

@@ -6,7 +6,7 @@
 /*   By: jescully <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 15:10:39 by jescully          #+#    #+#             */
-/*   Updated: 2022/02/01 16:56:30 by jescully         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:18:36 by jescully         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,13 @@ class Fixed
 		int		getBits( void ) const;
 		void	setBits(int const raw);
 
+		//min and max functions
+		static Fixed	&min(Fixed & fp1, Fixed &fp2);
+		static const Fixed	&min(const Fixed & fp1, const Fixed &fp2);
+
+		static Fixed	&max(Fixed & fp1, Fixed &fp2);
+		static const Fixed	&max(const Fixed & fp1, const Fixed &fp2);
+
         bool    isInt (void) const;
         //Hello operator (comparisons)
         bool    operator<(Fixed const & rhs) const;
@@ -48,6 +55,8 @@ class Fixed
 
         Fixed operator--(void);
         Fixed operator--(int);
+        Fixed operator++(void);
+        Fixed operator++(int);
 
         //Hello operator (assignation)
 		Fixed &  operator=(const Fixed & rhs);

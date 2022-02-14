@@ -6,7 +6,7 @@
 /*   By: jescully <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 12:53:33 by jescully          #+#    #+#             */
-/*   Updated: 2022/01/24 15:54:39 by jescully         ###   ########.fr       */
+/*   Updated: 2022/02/14 15:57:37 by jescully         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ int main()
 	Karoline.complain("warning");
 	std::cout << std::endl;
 	Karoline.complain("error");
-	/* Karoline.complain("invalid"); */
-	/* Karoline.complain(""); */
+	std::cout << std::endl;
+	Karoline.complain("invalid");
+	std::cout << std::endl;
+	Karoline.complain("");
 	return 0;
 }

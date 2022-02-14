@@ -6,7 +6,7 @@
 /*   By: jescully <jescully@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 22:35:16 by jescully          #+#    #+#             */
-/*   Updated: 2022/01/23 22:41:36 by jescully         ###   ########.fr       */
+/*   Updated: 2022/02/14 17:45:54 by jescully         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void    Weapon::setType(std::string type)
     this->_type = type;
 }
 
-std::string const Weapon::getType(void) const
+std::string const &Weapon::getType(void) const
 {
     return this->_type;
 }

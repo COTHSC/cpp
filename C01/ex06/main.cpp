@@ -6,7 +6,7 @@
 /*   By: jescully <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 12:53:33 by jescully          #+#    #+#             */
-/*   Updated: 2022/01/24 15:39:26 by jescully         ###   ########.fr       */
+/*   Updated: 2022/02/14 16:09:38 by jescully         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,10 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		std::cout << "There are too few, or too many arguments. the accepted number of arguments is one. Please enter a single argument." << std::endl;
+		std::cout << "There are too few, or too many arguments. The accepted number of arguments is one. Please enter a single argument." << std::endl;
 		return 1;
 	}
 	else
 		Karoline.karenfilter(argv[1]);
-	/* Karoline.karenfilter("debug"); */
-	/* std::cout << std::endl; */
-	/* Karoline.karenfilter("info"); */
-	/* std::cout << std::endl; */
-	/* Karoline.karenfilter("warning"); */
-	/* std::cout << std::endl; */
-	/* Karoline.karenfilter("error"); */
-	/* std::cout << std::endl; */
-	/* Karoline.karenfilter("sdfghjk"); */
-	/* std::cout << std::endl; */
 	return 0;
 }

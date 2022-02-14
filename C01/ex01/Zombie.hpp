@@ -6,7 +6,7 @@
 /*   By: jescully <jescully@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 19:33:35 by jescully          #+#    #+#             */
-/*   Updated: 2022/01/22 13:13:03 by jescully         ###   ########.fr       */
+/*   Updated: 2022/02/14 17:42:01 by jescully         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class Zombie
         void    announce(void) const;
         void    setName(std::string name);
 };
+
 Zombie* newZombie( std::string name );
 Zombie* zombieHorde( int N, std::string name );
+
 #endif

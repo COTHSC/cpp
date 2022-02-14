@@ -6,7 +6,7 @@
 /*   By: jescully <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 15:14:44 by jescully          #+#    #+#             */
-/*   Updated: 2022/02/01 17:03:00 by jescully         ###   ########.fr       */
+/*   Updated: 2022/02/02 11:49:09 by jescully         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,15 +121,34 @@ bool  Fixed::operator!=(const Fixed & rhs) const
 
 Fixed Fixed::operator--(void)
 {
-	Fixed tmp;
-	tmp.setBits(this->getBits() - (1 << this->_getFractionalBits()));
-	return tmp;
+	int tmp = this->getBits();
+	this->setBits(--tmp);
+	return *this;
+}
+
+Fixed Fixed::operator++(void)
+{
+	int tmp = this->getBits();
+	this->setBits(++tmp);
+	return *this;
 }
 
 Fixed Fixed::operator--(int)
 {
-	this->setBits(this->getBits() - (1 << this->_getFractionalBits()));
-	return *this;
+	Fixed tmp = *this;
+	int temp = (this->getBits());
+	this->setBits(--temp);
+	/* this->setBits(this->getBits() - (1 << this->_getFractionalBits())); */
+	return tmp;
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed tmp = *this;
+	int temp = (this->getBits());
+	this->setBits(++temp);
+	/* this->setBits(this->getBits() + (1 << this->_getFractionalBits())); */
+	return tmp;
 }
 
 bool    Fixed::isInt( void ) const
@@ -191,4 +210,33 @@ std::ostream & operator<<( std::ostream & o, Fixed const & rhs )
     else
         o << rhs.toInt();
     return o;
+}
+
+
+Fixed	&Fixed::min(Fixed & fp1, Fixed &fp2)
+{
+	if (fp1 < fp2)
+		return fp1;
+	return fp2;
+}
+
+const Fixed	&Fixed::min(const Fixed & fp1, const Fixed &fp2)
+{
+	if (fp1 < fp2)
+		return fp1;
+	return fp2;
+}
+
+Fixed	&Fixed::max(Fixed & fp1, Fixed &fp2)
+{
+	if (fp1 < fp2)
+		return fp2;
+	return fp1;
+}
+
+const Fixed	&Fixed::max(const Fixed & fp1, const Fixed &fp2)
+{
+	if (fp1 < fp2)
+		return fp2;
+	return fp1;
 }

@@ -6,7 +6,7 @@
 /*   By: jescully <jescully@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/23 22:54:44 by jescully          #+#    #+#             */
-/*   Updated: 2022/01/24 12:04:37 by jescully         ###   ########.fr       */
+/*   Updated: 2022/02/14 15:52:37 by jescully         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(int argc, char **argv)
     std::string     thatyMyLine;
     std::string     ogString;
     std::string     newString;
-	int				pos;
+	size_t				pos;
 
     if (argc != 4)
     {
@@ -32,13 +32,13 @@ int main(int argc, char **argv)
     fileName = argv[1];
     ogString = argv[2];
     newString = argv[3];
-    infile.open(fileName);
+    infile.open(&fileName[0]);
     if (infile.good() == false)
     {
         std::cout << "Error, that file aint quite right." << std::endl;
         return 1;
     }
-    outfile.open(fileName + ".replace");
+    outfile.open(&(fileName + ".replace")[0]);
     if (outfile.good() == false)
     {
         std::cout << "Error, that file aint quite right." << std::endl;
@@ -46,16 +46,15 @@ int main(int argc, char **argv)
     }
     while(getline(infile, thatyMyLine))
     {
-        while((pos = thatyMyLine.find("test")) != std::string::npos)
+        while((pos = thatyMyLine.find(ogString)) != std::string::npos)
         {
-            outfile << thatyMyLine.substr(0, pos);// << std::endl;
-			thatyMyLine = thatyMyLine.substr(pos + ogString.size(), std::string::npos);// + thatyMyLine(pos + 4, std::string::npos);
-			outfile << newString; //<< std::endl;
+            outfile << thatyMyLine.substr(0, pos);
+			thatyMyLine = thatyMyLine.substr(pos + ogString.size(), std::string::npos);
+			outfile << newString;
         }
 		outfile << thatyMyLine << std::endl;
     }
     outfile.close();
     infile.close();
-
     return 0;
 }

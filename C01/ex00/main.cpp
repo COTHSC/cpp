@@ -6,7 +6,7 @@
 /*   By: jescully <jescully@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 20:12:28 by jescully          #+#    #+#             */
-/*   Updated: 2022/01/21 20:38:00 by jescully         ###   ########.fr       */
+/*   Updated: 2022/02/14 12:28:12 by jescully         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,12 @@
 int main(void)
 {
     Zombie *tbdel;
-    delete newZombie("Jim");
-    /* tbdel = newZombie("Jim"); */
-    /* delete tbdel; */
+    tbdel = newZombie("Jim");
+	tbdel->announce();
+
+    delete tbdel;
+
     randomChump("Jam");
+
     return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: jescully <jescully@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/21 19:41:32 by jescully          #+#    #+#             */
-/*   Updated: 2022/01/22 13:22:20 by jescully         ###   ########.fr       */
+/*   Updated: 2022/02/14 12:36:28 by jescully         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,27 +29,7 @@ void Zombie::announce(void) const
     std::cout << _name << " Braaaaaaaaaaaaaaaaaiiiiinzzzzzzz" << std::endl;
 }
 
-
-/* Zombie  *newZombie(std::string name) */
-/* { */
-/*     Zombie *retZombie = new Zombie(name); */
-/*     retZombie->announce(); */
-/*     return retZombie; */
-/* } */
-
 void    Zombie::setName(std::string str)
 {
     this->_name = str; 
-}
-Zombie  *zombieHorde(int N, std::string name)
-{
-    Zombie  *zombieHorde = new Zombie[N];
-    int i = 0;
-
-    while (i < N)
-    {
-        zombieHorde[i].setName(name);
-        i++;
-    }
-    return (zombieHorde);
 }
