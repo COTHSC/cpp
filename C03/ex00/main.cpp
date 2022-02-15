@@ -1,12 +1,12 @@
-#include "clapTrap.hpp"
+#include "ClapTrap.hpp"
 
 
 int main(void)
 {
     ClapTrap frank("frank");
     ClapTrap MadVillain("MadVillain");
-    ClapTrap MadVillainJr("MadVillain");
-    ClapTrap frankJr("Frank");
+    ClapTrap MadVillainJr("MadVillainJr");
+    ClapTrap frankJr("FrankJr");
 
     int i = -1;
     while (++i < 20)

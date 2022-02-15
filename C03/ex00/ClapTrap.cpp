@@ -1,4 +1,4 @@
-#include "clapTrap.hpp"
+#include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() : _hitPoints(10), _energyPoints(10) , _attackDamage(0)
 {
@@ -41,7 +41,7 @@ void    ClapTrap::takeDamage(unsigned int amount)
         std::cout << " has been hit ";
         std::cout << " loosing  " << amount;
         std::cout << " hit points" << std::endl;
-        if (_hitPoints >= amount)
+        if (_hitPoints >= (int)amount)
             _hitPoints -= amount;
         else
             _hitPoints = 0;

@@ -1,51 +1,34 @@
-#include "clapTrap.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 
 int main(void)
 {
-    /* ClapTrap frank("frank"); */
-    /* ClapTrap MadVillain("MadVillain"); */
-    /* ClapTrap MadVillainJr("MadVillain"); */
-    /* ClapTrap frankJr("Frank"); */
     ScavTrap DOOM("MF");
     FragTrap mos("def");
 
+	std::cout << "\n\n";
+
     DOOM.attack("def");
+	std::cout << "\n\n";
     mos.takeDamage(20);
+	std::cout << "\n\n";
     
     mos.attack("DOOM");
+	std::cout << "\n\n";
     DOOM.takeDamage(20);
+	std::cout << "\n\n";
 
     mos.beRepaired(20);
+	std::cout << "\n\n";
     DOOM.beRepaired(20);
+	std::cout << "\n\n";
 
     DOOM.guardGate();
+	std::cout << "\n\n";
     mos.highFivesGuys();
+	std::cout << "\n\n";
 
-    /* int i = -1; */
-    /* while (++i < 20) */
-    /* { */
-    /*     MadVillain.attack("frank"); */
-    /*     frank.takeDamage(MadVillain.getAttackDamage()); */
-    /*     frank.attack("MadVillain"); */
-    /*     MadVillain.takeDamage(frank.getAttackDamage()); */
-    /*     std::cout << i << std::endl; */
-    /* } */
-
-    /* /1* i = -1; *1/ */
-    /* /1* while (++i < 20) *1/ */
-    /* /1* { *1/ */
-    /* /1*     MadVillainJr.attack("FrankJr"); *1/ */
-    /* /1*     frankJr.takeDamage(2); *1/ */
-    /* /1*     frankJr.attack("MadVillainJr"); *1/ */
-    /* /1*     MadVillainJr.takeDamage(1); *1/ */
-    /* /1* } *1/ */
-
-    /* i = -1; */
-    /* while (++i < 20) */
-    /* { */
-    /*     MadVillainJr.beRepaired(1); */
-    /*     frankJr.beRepaired(2); */
-    /* } */
     return 0;
 }

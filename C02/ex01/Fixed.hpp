@@ -1,15 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FixedPoint.hpp                                     :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jescully <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 15:10:39 by jescully          #+#    #+#             */
-/*   Updated: 2022/01/31 09:34:16 by jescully         ###   ########.fr       */
+/*   Updated: 2022/02/15 13:53:00 by jescully         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FIXED_HPP
+#define FIXED_HPP
 #include <iostream>
 
 class Fixed 
@@ -22,10 +24,10 @@ class Fixed
 		int toInt( void ) const;
 		float toFloat( void ) const;
 		~Fixed();
-		int		getBits( void ) const;
-		void	setBits(int const raw);
-        bool    isInt (void) const;
+		int		getRawBits( void ) const;
+		void	setRawBits(int const raw);
 		Fixed &  operator=(const Fixed & rhs);
+		std::ostream & operator<<( std::ostream & o);
 	private:
 		int		_getFractionalBits( void ) const;
 		int	_fixedPointValue;
@@ -33,3 +35,4 @@ class Fixed
 };
 
 std::ostream & operator<<( std::ostream & o, Fixed const & rhs );
+#endif

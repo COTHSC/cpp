@@ -1,8 +1,12 @@
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 #include <iostream>
+
+
 
 class ClapTrap
 {
-    private:
+	protected:
         std::string _name;
         int         _hitPoints;
         int         _energyPoints;
@@ -19,12 +23,4 @@ class ClapTrap
         int     getEnergyPoints( void ) const;
         int     getHitPoints( void ) const;
 };
-
-class ScavTrap: public ClapTrap
-{
-    public:
-        ScavTrap();
-        ScavTrap(std::string name); 
-        ~ScavTrap();
-        void guardGate();
-};
+#endif

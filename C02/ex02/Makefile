@@ -6,20 +6,20 @@
 #    By: jescully <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 15:42:57 by jescully          #+#    #+#              #
-#    Updated: 2022/02/15 14:51:48 by jescully         ###   ########.fr        #
+#    Updated: 2022/02/15 12:54:20 by jescully         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = fixed
 
-SRCS = ClapTrap.cpp  \
-	   main.cpp
+SRCS = main.cpp \
+	   Fixed.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-CXX=c++
+CXX=c++ -std=c++98
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror
 
 .PHONY: all clean fclean re
 

@@ -6,11 +6,11 @@
 /*   By: jescully <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 15:14:44 by jescully          #+#    #+#             */
-/*   Updated: 2022/01/28 17:03:02 by jescully         ###   ########.fr       */
+/*   Updated: 2022/02/15 13:52:11 by jescully         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FixedPoint.hpp"
+#include "Fixed.hpp"
 
 Fixed::Fixed() : _fixedPointValue(0)
 {
@@ -31,7 +31,7 @@ Fixed::~Fixed()
 	return;
 }
 
-int	Fixed::getBits( void ) const
+int	Fixed::getRawBits( void ) const
 {
 	std::cout << "Fixed - getRawBits member function called\n";
 	return _fixedPointValue;
@@ -40,11 +40,11 @@ int	Fixed::getBits( void ) const
 Fixed&  Fixed::operator=(const Fixed& rhs)
 {
 	std::cout << "Fixed - Assignation operator called\n";
-	this->_fixedPointValue = rhs.getBits();
+	this->_fixedPointValue = rhs.getRawBits();
 	return *this;
 }
 
-void	Fixed::setBits(int const raw)
+void	Fixed::setRawBits(int const raw)
 {
 	_fixedPointValue = raw;
 }

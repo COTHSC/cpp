@@ -1,4 +1,4 @@
-#include "FixedPoint.hpp"
+#include "Fixed.hpp"
 
 int main( void ) {                                                              
      Fixed a;                                                                    
@@ -7,9 +7,9 @@ int main( void ) {
 
      c = b;                                                                      
                                                                                  
-     std::cout << a.getBits() << std::endl;                                   
-     std::cout << b.getBits() << std::endl;                                   
-     std::cout << c.getBits() << std::endl;                                   
+     std::cout << a.getRawBits() << std::endl;                                   
+     std::cout << b.getRawBits() << std::endl;                                   
+     std::cout << c.getRawBits() << std::endl;                                   
                                                                                  
      return 0;                                                                   
  } 

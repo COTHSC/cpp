@@ -6,14 +6,15 @@
 #    By: jescully <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 15:42:57 by jescully          #+#    #+#              #
-#    Updated: 2022/01/24 15:44:19 by jescully         ###   ########.fr        #
+#    Updated: 2022/02/15 17:23:51 by jescully         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = karenFilter
+NAME = ClapTrap
 
-SRCS = main.cpp  \
-	   Karen.cpp
+SRCS = ClapTrap.cpp  \
+	   main.cpp \
+	   ScavTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FixedPoint.hpp                                     :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jescully <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 15:10:39 by jescully          #+#    #+#             */
-/*   Updated: 2022/02/02 11:18:36 by jescully         ###   ########.fr       */
+/*   Updated: 2022/02/15 13:55:43 by jescully         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class Fixed
 		float toFloat( void ) const;
 
         //getters and setters
-		int		getBits( void ) const;
-		void	setBits(int const raw);
+		int		getRawBits( void ) const;
+		void	setRawBits(int const raw);
 
 		//min and max functions
 		static Fixed	&min(Fixed & fp1, Fixed &fp2);
