@@ -1,4 +1,4 @@
-#include "diamondTrap.hpp"
+#include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap(void)
 {
@@ -6,9 +6,13 @@ DiamondTrap::DiamondTrap(void)
     return ;
 }
 
-DiamondTrap::DiamondTrap(std::string name):ClapTrap(name), FragTrap(name), ScavTrap(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name", 100, 30, 50), _name(name)
 {
     std::cout << "Diamond trap name string called" << std::endl;
+	std::cout << "\n\n";
+	std::cout << "Hitpoints:     " << getHitPoints() << std::endl;
+	std::cout << "AttackDamage:  " << getAttackDamage() << std::endl;
+	std::cout << "Energy:        " << getEnergyPoints() << std::endl;
     return ;
 }
 
@@ -31,12 +35,7 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap const &rhs)
 	return *this;
 }
 
-void DiamondTrap::attack(const std::string &target)
-{
-    ScavTrap::attack(target);
-}
-
 void DiamondTrap::whoAmI()
 {
-    std::cout << "My (diamond) name is: " << this->_name << " and my (clap) name is: " << this->ClapTrap::_name << std::endl;
+    std::cout << "[DiamondTrap] My (diamond) name is: " << this->_name << ", and my (clap) name is: " << this->ClapTrap::_name << std::endl;
 }

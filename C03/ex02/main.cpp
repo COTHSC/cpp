@@ -15,7 +15,7 @@ int main(void)
     mos.takeDamage(20);
 	std::cout << "\n\n";
     
-    mos.attack("DOOM");
+    mos.attack("MF");
 	std::cout << "\n\n";
     DOOM.takeDamage(20);
 	std::cout << "\n\n";

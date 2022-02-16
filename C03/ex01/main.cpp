@@ -6,8 +6,6 @@ int main(void)
 {
     ScavTrap DOOM("MF");
     ScavTrap DOOM2("MF1");
-    ScavTrap DOOM3("MF2");
-    ScavTrap DOOM4("MF3");
 
 	std::cout << "\n\n";
     DOOM.attack("MF1");

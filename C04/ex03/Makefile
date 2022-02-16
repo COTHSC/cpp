@@ -6,20 +6,23 @@
 #    By: jescully <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 15:42:57 by jescully          #+#    #+#              #
-#    Updated: 2022/01/24 15:44:19 by jescully         ###   ########.fr        #
+#    Updated: 2022/02/16 19:28:43 by jescully         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = karenFilter
+NAME = ClapTrap
 
 SRCS = main.cpp  \
-	   Karen.cpp
+	   Ice.cpp \
+	   AMateria.cpp \
+	   Character.cpp \
+	   MateriaSource.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 CXX=c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -g #-Wall -Wextra -Werror -std=c++98
 
 .PHONY: all clean fclean re
 

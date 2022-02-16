@@ -53,6 +53,8 @@ void    ClapTrap::takeDamage(unsigned int amount)
         else
             _hitPoints = 0;
     }
+    else if (!_hitPoints)
+        std::cout << "[ClapTrap] " << _name << " is dead." << std::endl;
 
 }
 void    ClapTrap::beRepaired(unsigned int amount)

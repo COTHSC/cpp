@@ -6,7 +6,7 @@
 #    By: jescully <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 15:42:57 by jescully          #+#    #+#              #
-#    Updated: 2022/02/15 17:57:04 by jescully         ###   ########.fr        #
+#    Updated: 2022/02/16 09:50:37 by jescully         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ NAME = ClapTrap
 SRCS = ClapTrap.cpp  \
 	   main.cpp \
 	   ScavTrap.cpp \
-	   FragTrap.cpp
+	   FragTrap.cpp \
+	   DiamondTrap.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
