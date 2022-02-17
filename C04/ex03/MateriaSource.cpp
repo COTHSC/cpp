@@ -7,7 +7,6 @@ MateriaSource::MateriaSource(void)
 	{
        _source[i] = 0;
 	}
-	
     std::cout << "Default Constructor for MateriaSource called" << std::endl;
     return ;
 };
@@ -38,7 +37,7 @@ void MateriaSource::learnMateria(AMateria*m)
 		if (!_source[i])
 		{
 			_source[i] = m;	    
-			std::cout << "Something has been copied into materia source" << std::endl;
+			std::cout << m->getType() <<" has been copied into materia source" << std::endl;
 			return ;
 		}
 	}
@@ -53,7 +52,7 @@ AMateria* MateriaSource::createMateria(std::string const & type)
             if (_source[i]->getType() == type)
             {
 			    //_source[i] = m;	    
-			    std::cout << "Something has been cloned" << std::endl;
+			    std::cout << type << " has been cloned" << std::endl;
 			    return _source[i]->clone();
             }
 		}

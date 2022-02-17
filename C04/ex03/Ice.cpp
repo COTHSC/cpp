@@ -25,7 +25,7 @@ Ice::~Ice( void ){
 
 Ice	&Ice::operator= ( Ice const & rhs ){
 
-	this->_type = rhs._type;
+	*this = rhs;
 	return *this;
 };
 

@@ -45,7 +45,7 @@ void Character::equip(AMateria* m)
 		if (!_inventory[i])
 		{
 			_inventory[i] = m;	
-			std::cout << "Charachter is now equipped with smth" << std::endl;
+			std::cout << "Charachter is now equipped with " << m->getType() << std::endl;
 			return ;
 		}
 	}
@@ -61,7 +61,6 @@ void	Character::_storeOldAddress(int idx)
 			return ;
 		}
 	}
-	std::cout << "IIIIIIIIIIIIIII\n";
 	delete _materiaBuffer[255];
 	_materiaBuffer[255] = _inventory[idx];
 };
@@ -71,8 +70,8 @@ void Character::unequip(int idx)
 	if (_inventory[idx])
 	{
 		_storeOldAddress(idx);
+		std::cout << "Character has been unequipped of " << _inventory[idx]->getType() << std::endl;
 		_inventory[idx] = NULL;
-		std::cout << "Character has been unequipped of something" << std::endl;
 	}
 }
 

@@ -14,6 +14,7 @@ NAME = ClapTrap
 
 SRCS = main.cpp  \
 	   Ice.cpp \
+	   Heal.cpp \
 	   AMateria.cpp \
 	   Character.cpp \
 	   MateriaSource.cpp
