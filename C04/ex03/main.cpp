@@ -124,6 +124,4 @@ int main(void)
 
 
 	std::cout << "\n\n";
-
-
 }
