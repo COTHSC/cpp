@@ -35,9 +35,10 @@ Form::~Form( void ){
 	return;
 };
 
-Form	&Form::operator= ( Form const & rhs ){
+Form	&Form::operator= ( Form const & rhs ) {
 
-	*this = rhs;                                                            
+	if (this != &rhs)
+		*this = rhs;                                                            
 	return *this;
 }
 
@@ -57,6 +58,10 @@ bool	Form::getIsSigned() const{
 	return _isSigned;
 }
 
+// void	Form::setSign( void ) {
+// 	_isSigned = 1;
+// }
+
 void Form::beSigned(Bureaucrat const & signer)
 {
 	if (_isSigned)
@@ -67,6 +72,15 @@ void Form::beSigned(Bureaucrat const & signer)
 		throw Form::GradeToLowException();
 }
 
+void 	Form::isExe( Bureaucrat const & executor) const
+{
+	if (executor.getGrade() > this->getGradeToExecute())
+		throw Form::GradeToLowException();
+	else if (!this->getIsSigned())
+		throw Form::NotSignedException();
+	
+}
+
 const char * Form::GradeToHighException::what( void ) const throw()
 {
 	return ("EXCEPTION out of range, bureaucrat cannot be so high");
@@ -75,6 +89,11 @@ const char * Form::GradeToHighException::what( void ) const throw()
 const char * Form::AlreadySignedException::what( void ) const throw()
 {
 	return ("Form is already signed (exception)");
+}
+
+const char * Form::NotSignedException::what( void ) const throw()
+{
+	return ("Form must be signed to be executed (exception)");
 }
 
 const char * Form::GradeToLowException::what( void ) const throw()
