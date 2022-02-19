@@ -14,6 +14,8 @@ class Dog : virtual public Animal
         Dog (Dog const &src);
         Dog &operator=(Dog const &src);
         void makeSound( void ) const;
+        // virtual void addIdea( std::string idea);
+        // virtual void showIdeas( void ) const;
 };
 
 #endif
