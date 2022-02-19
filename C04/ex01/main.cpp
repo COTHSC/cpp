@@ -5,6 +5,7 @@
 int		main()
 {
 	Animal		*peta[10];
+	Animal		someRandomAnimal;
 
 	std::cout << "\n\n-- Basic Tests ---\n\n";
 
