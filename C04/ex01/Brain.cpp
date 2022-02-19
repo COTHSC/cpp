@@ -8,6 +8,8 @@ Brain::Brain( void )
 
 Brain::Brain( Brain const &src)
 {
+    // for(int i = 0; i < 100; i++)
+    //     this->_ideas[i] = src._ideas[i];
     *this = src;
     std::cout << "A brain has been copied" << std::endl;
     return ;
@@ -15,13 +17,13 @@ Brain::Brain( Brain const &src)
 
 Brain   &Brain::operator=(Brain const & copy)                                   
 {                                                                               
-    std::cout << "Brain's operator= ";                                          
+    // std::cout << "Brain's operator= ";                                          
     if (this != &copy)                                                          
     {                                                                           
         for (int i = 0; i < 100; i++)                                           
             this->_ideas[i] = copy._ideas[i];                                   
     }                                                                           
-    std::cout << " called" << std::endl;                                        
+    // std::cout << " called" << std::endl;                                        
     return *this;                                                               
 }             
 

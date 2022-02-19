@@ -1,5 +1,6 @@
 #include "Cat.hpp"
 
+
 Cat::Cat ( void ): _brain(new Brain)
 {
     _type = "cat";
@@ -10,12 +11,15 @@ Cat::Cat ( void ): _brain(new Brain)
 Cat::Cat (Cat const &src): _brain(new Brain)
 {
     std::cout << "Cat copy constructor called" << std::endl;
-    *this = src; 
+    
+    std::cout << "\n\nThis is the address of Brain in CopyCat: " << _brain << "\n";
+    std::cout << "\n\nThis is the address of Brain in OG: " << src._brain << "\n\n";
+
+    *this->_brain = *src._brain;
 }
 
 Cat &Cat::operator=(Cat const &rhs)
 {
-    std::cout << "Cat assignation operator called" << std::endl;
     if (this != &rhs)
         this->_type = rhs.getType();
     return *this;
