@@ -6,11 +6,11 @@
 #    By: jescully <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 15:42:57 by jescully          #+#    #+#              #
-#    Updated: 2022/02/16 19:28:43 by jescully         ###   ########.fr        #
+#    Updated: 2022/02/19 17:34:41 by jescully         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = recap
 
 SRCS = main.cpp  \
 	   Ice.cpp \
