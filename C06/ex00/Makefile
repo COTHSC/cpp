@@ -10,10 +10,10 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrassie
+NAME = ConvertMe.exe
 
 SRCS = main.cpp  \
-	Bureaucrat.cpp \
+	   Scalar.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

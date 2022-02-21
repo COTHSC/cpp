@@ -42,7 +42,6 @@ class Form {
 		Form( Form const & src );
 		virtual ~Form( void );
 
-
 		int			getGradeToSign( void ) const;
 		int			getGradeToExecute( void ) const;
 		std::string	getName( void ) const;
@@ -76,8 +75,6 @@ class Form {
 		bool _isSigned;
 		int const _gradeToExecute;
 		int const _gradeToSign;
-		
-
 };
 
 std::ostream &operator<< (std::ostream &, Form const &);

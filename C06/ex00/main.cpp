@@ -7,8 +7,15 @@ int main( int argc, char **argv )
 	{
 		std::string to_be_converted;
 		to_be_converted = argv[1];
-		Scalar done(to_be_converted);
-		done.print();
+		try
+		{
+			Scalar done(to_be_converted);
+			done.print();	
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+		}
 	}
 	return 0;
 }
