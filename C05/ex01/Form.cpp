@@ -36,8 +36,8 @@ Form::~Form( void ){
 };
 
 Form	&Form::operator= ( Form const & rhs ){
-
-	*this = rhs;                                                            
+	if (this != &rhs)
+		*this = rhs;                                                            
 	return *this;
 }
 

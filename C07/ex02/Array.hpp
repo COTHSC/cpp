@@ -9,13 +9,15 @@ class Array {
 
 	private:
         T *_array;
+        size_t _size;
 	public:
 
-		Array( void ) {_array = new T[1]; };
-        Array (unsigned int n) { _array = new T[n]; };
+		Array( void ) : _size(1) {_array = new T[1]; };
+        Array (unsigned int n) : _size(n) { _array = new T[n]; };
 
 		Array( Array const & src ) {
             _array = new T[src.size()];
+            _size = src.size();
             for (size_t i = 0; i < src.size() ; i++)
                 this->_array[i] = src._array[i]; 
         };
@@ -25,31 +27,29 @@ class Array {
         //operator overloads
 		Array	&operator= ( Array const & rhs ){
             delete [] _array;
+            _array = new T[rhs.size()];
+            _size = rhs._size;
             for (size_t i = 0; i < rhs.size() ; i++)
                 this->_array[i] = rhs._array[i]; 
-
             return (this);
         };
         
         T     &operator[] (int const index) {
-            if (index > (this->size()) || index < 0)
+            if (index > (this->size() - 1) || index < 0)
                 throw out_of_range_exception();
             return this->_array[index];    
         };
 
         //Basic size function
-        unsigned int   size( void ) const {
-            unsigned int i = 0;
-            while (_array[i])
-                i++;
-            return i;
+        size_t   size( void ) const {
+            return _size;
         };
 
         //Exception
         class out_of_range_exception : public std::exception
         {
             public:
-                virtual const char *what( void )
+                virtual const char *what( void ) const throw()
                 {
                     return ("Exception, out of range");
                 }

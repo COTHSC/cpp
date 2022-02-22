@@ -8,9 +8,9 @@
 int main(void)
 {
 	Intern someintern;
-	Form *plantTrees = someintern.createForm("shrubbery request", "test shrub");
-	Form *pardont_test = someintern.createForm("presidential pardon", "test Pardon");
-	Form *robotomy_test = someintern.createForm("robotomy request", "test robotomy");
+	Form *plantTrees = someintern.createForm("shrubbery request", "test_shrub");
+	Form *pardont_test = someintern.createForm("presidential pardon", "test_Pardon");
+	Form *robotomy_test = someintern.createForm("robotomy request", "test_robotomy");
 
 	
 	Bureaucrat	LowRanker("Some Government worker",138);

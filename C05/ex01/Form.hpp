@@ -27,10 +27,10 @@ class Form {
 
 
 	private:
-		bool _isSigned;
 		std::string const _name;
-		int const _gradeToSign;
+		bool _isSigned;
 		int const _gradeToExecute;
+		int const _gradeToSign;
 		
 		class GradeToHighException : public std::exception
 		{
